@@ -1,0 +1,15 @@
+<head>
+    <script>
+      var oldPath = document.baseURI != undefined ? document.baseURI : document.documentURI;
+      console.log("coming from: " + oldPath)
+      if(oldPath == undefined){
+        oldPath = "";
+      }
+      newPath = new URL(oldPath)
+      if(newPath.hostname === "polinetwork.github.io"){
+        newPath.hostname = "polinetwork.org"
+        console.log("newPath:", newPath)
+        window.location.href(newPath.href);
+      }
+    </script>
+</head>
